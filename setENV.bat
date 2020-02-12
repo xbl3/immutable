@@ -17,6 +17,27 @@ rem	makes hubxt... return campfire
 ::    input3 can change the default of system variable
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::	Dynamically set system enviroment variables for use in scripts or whatever. 
+::	
+::		envVAR foo bar
+::
+::			If no input is received it'll ask you what you want. 
+::
+::	**	No checks beyond input 1 and input 2, so if you skip past the prompt 
+::	**	it'll run what it has which could be unintentional
+::	**	leading to	foo=(null) || (null)=bar	(might change that)
+::
+::	Tons of possibilities though. Persist an array outside of all setlocal, 
+::	setup an enviroment for some command line app, change a variable to something else on the fly, 
+::	whatever you need really, and just thought of ghetto doskey (have to add in the quote stippers)
+::
+::	All is callable, always, from the prompt until it's removed. (Might work on finding out how this can be done [which I'm sure it can be] )
+::	As was stated in the sauce: "it's akin to going to system settings / advanced/ enviroment variables"
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: ) // dangler Oo dunno where he goes as it was copy/paste from long orignal
+
 setlocal enabledelayedexpansion
 
 :setupVAR
